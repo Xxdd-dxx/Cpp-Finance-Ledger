@@ -76,7 +76,7 @@
 │   ├── res.qrc                 # Qt 资源文件 (图标、内置图片)
 │   └── CMakeLists.txt          # 前端构建配置文件
 
----
+
 
 ## ⚙️ 如何在本地运行 (How to Run)
 
