@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/image"/>
+    <qresource prefix="/new/prefix1">
+        <file>Ledger.png</file>
+        <file>close.png</file>
+        <file>Avatar.png</file>
+    </qresource>
+</RCC>
