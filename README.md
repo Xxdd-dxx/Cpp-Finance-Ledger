@@ -62,9 +62,10 @@
 ```text
 .
 ├── finance_server/             # 后端服务端源码
-│   ├── main.cpp                # 服务端主入口 (API 路由、事务控制、SOCI 映射)
-│   ├── include/                # 第三方轻量级依赖头文件 (httplib.h, json.hpp)
-│   └── CMakeLists.txt          # 后端构建配置文件
+│   ├── main.cpp                # 服务端主入口 (包含 API 路由与业务逻辑)
+│   └── include/                # 第三方轻量级依赖头文件
+│       ├── httplib.h           # 提供 HTTP RESTful 服务能力
+│       └── json.hpp            # 提供 JSON 数据序列化能力
 │
 ├── finance_client/             # 前端客户端源码
 │   ├── main.cpp                # 客户端程序主入口
@@ -74,3 +75,4 @@
 │   ├── transactiondialog.cpp/.h/.ui # 流水穿透详情面板 (本地内存极速排序与过滤)
 │   ├── res.qrc                 # Qt 资源文件 (图标、内置图片)
 │   └── CMakeLists.txt          # 前端构建配置文件
+
