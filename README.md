@@ -76,3 +76,22 @@
 │   ├── res.qrc                 # Qt 资源文件 (图标、内置图片)
 │   └── CMakeLists.txt          # 前端构建配置文件
 
+---
+
+## ⚙️ 如何在本地运行 (How to Run)
+
+### 1. 准备底层数据库
+* 在本地 MySQL 中创建名为 `finance_db` 的数据库。
+* 根据项目中的业务实体关系，建立 `users`（用户）、`accounts`（账户）和 `transactions`（流水）三张基础数据表，并配置好相应的外键级联约束。
+
+### 2. 编译并启动后端服务
+* **修改配置**：打开 `finance_server/main.cpp`，将 `DB_CONN_STR` 常量中的数据库账密修改为您本地的真实配置。
+* **环境与编译**：确保 Ubuntu 环境已安装 GCC 及 SOCI、MySQL 开发库。进入后端目录并执行高效编译：
+  g++ -O3 -std=c++17 main.cpp -I/usr/include/mysql -lsoci_core -lsoci_mysql -lpthread -o finance_server_prod
+启动服务：./finance_server_prod
+
+3. 编译并运行前端客户端
+修改网络终端：进入 finance_client 目录，将各个窗口头文件（如 LoginWindow.h 等）中的 SERVER_URL 常量修改为后端服务实际运行的 IP 地址（本地联调可使用 http://127.0.0.1:8080）。
+
+构建与启动：使用 Qt Creator 打开目录下的 CMakeLists.txt。完成基础的 CMake 构建配置后，直接点击 运行 (Ctrl + R) 即可启动系统。
+
